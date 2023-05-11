@@ -35,15 +35,23 @@ import profileImage from "../assets/profile.jpg";
 
 const NavItems = [
   {
-    name: "Dashboard",
+    text: "Dashboard",
     icon: <HomeOutlined />,
   },
   {
-    name: "Client Facing",
+    text: "Form",
+    icon: <HomeOutlined />,
+  },
+  {
+    text: "Clients",
+    icon: <HomeOutlined />,
+  },
+  {
+    text: "Client Facing",
     icon: null,
   },
   {
-    name: "Products",
+    text: "Products",
     icon: <ShoppingCartOutlined />,
   },
   {
@@ -110,88 +118,88 @@ const Sidebar = ({
   return (
     <Box component="Nav">
       {isSidebarOpen && (
-      <Drawer
-        open={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-        variant="persistent"
-        anchor="left"
-        sx={{
-          width: drawerWidth,
-          "& .MuiDrawer-paper": {
-            color: theme.palette.secondary[200],
-            backgroundColor: theme.palette.primary[400],
-            boxSizing: "border-box",
-            borderWidth: isNonMobile ? "0" : "2px",
+        <Drawer
+          open={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
+          variant="persistent"
+          anchor="left"
+          sx={{
             width: drawerWidth,
-          },
-        }}
-      >
-        <Box width="100%">
-          <Box m="1.5rem 2rem 2rem 3rem">
-            <Typography
-              variant="h5"
-              fontWeight="bold"
-              color="${theme.palette.secondary[700]}"
-            >
-              Indigo
-            </Typography>
+            "& .MuiDrawer-paper": {
+              color: theme.palette.grey[200],
+              backgroundColor: theme.palette.primary[400],
+              boxSizing: "border-box",
+              borderWidth: isNonMobile ? "0" : "2px",
+              width: drawerWidth,
+            },
+          }}
+        >
+          <Box width="100%">
+            <Box m="1.5rem 2rem 2rem 3rem">
+              <Typography
+                variant="h2"
+                fontWeight="bold"
+                color={theme.palette.primary[500]}
+              >
+                Indigo
+              </Typography>
+            </Box>
+            {isNonMobile && (
+              <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                <ChevronLeft />
+              </IconButton>
+            )}
           </Box>
-          {isNonMobile && (
-            <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-              <ChevronLeft />
-            </IconButton>
-          )}
-        </Box>
-        <List>
-          {NavItems.map(({ text, icon }) => {
-            if (!icon) {
+          <List>
+            {NavItems.map(({ text, icon }) => {
+              if (!icon) {
+                return (
+                  <Typography key={text} sx={{ m: "2.5rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
               return (
-                <Typography key={text} sx={{ m: "2.5rem 0 1rem 3rem" }}>
-                  {text}
-                </Typography>
-              );
-            }
-            const lcText = text.toLowerCase();
-            return (
-              <ListItem key={text} disablePadding>
-                <ListItemButton
-                  onClick={() => {
-                    navigate(`/${lcText}`);
-                    setActive(lcText);
-                  }}
-                  sx={{
-                    BackgroundColor:
-                      active === lcText
-                        ? theme.palette.secondary[300]
-                        : "transparent",
-                    color:
-                      active === lcText
-                        ? theme.palette.primary[600]
-                        : theme.palette.secondary[100],
-                  }}
-                >
-                  <ListItemIcon
+                <ListItem key={text} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
                     sx={{
-                      ml: "2rem",
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[400]
+                          : "transparent",
                       color:
                         active === lcText
-                          ? theme.palette.secondary[700]
-                          : theme.palette.secondary[200],
+                          ? theme.palette.primary[200]
+                          : theme.palette.primary[100],
                     }}
                   >
-                    {icon}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                  {active === lcText && (
-                    <ChevronLeftOutlined sx={{ ml: "auto" }} />
-                  )}
-                </ListItemButton>
-              </ListItem>
-            );
-          })}
-          ;
-        </List>
-      </Drawer>
+                    <ListItemIcon
+                      sx={{
+                        ml: "2rem",
+                        color:
+                          active === lcText
+                            ? theme.palette.primary[300]
+                            : theme.palette.primary[200],
+                      }}
+                    >
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                    {active === lcText && (
+                      <ChevronLeftOutlined sx={{ ml: "auto" }} />
+                    )}
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+            ;
+          </List>
+        </Drawer>
       )}
     </Box>
   );
