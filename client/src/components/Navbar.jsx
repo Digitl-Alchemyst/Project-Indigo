@@ -24,9 +24,13 @@ import {
   useTheme,
 } from "@mui/material";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const theme = useTheme();
   const dispatch = useDispatch();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const isOpen = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
 
   return (
     <AppBar
@@ -38,12 +42,15 @@ const Navbar = () => {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left Side of Navbar */}
-        <FlexBetween>
-          <IconButton onClick={() => console.log("open/close sidebar")}>
+        <FlexBetween >
+          <IconButton
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            sx={{ mr: 2, marginLeft: -2 }}
+          >
             <MenuIcon />
           </IconButton>
           <FlexBetween
-            backgroundColor={theme.palette.background.default}
+            backgroundColor={theme.palette.primary[400]}
             borderRadius="5px"
             gap="3rem"
             padding="0.1rem 1.5rem"
