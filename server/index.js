@@ -14,7 +14,9 @@ import managementRoutes from './routes/management.js';
 // import apiRoutes from './routes/api.js';
 import salesRoutes from './routes/sales.js';
 
-
+// database injection data
+import User from './models/user.js';
+import { dataUser } from './data/index.js';
 
 // CONFIGURATION
 dotenv.config();
@@ -45,7 +47,14 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    // Only run this once to inject data into the database
+    User.insertMany(dataUser);
+    console.log('Data Inserted');
+    
+
     })    
     .catch((error) => console.log("${error} cannot make a connection to the database"));
+    
     
 
