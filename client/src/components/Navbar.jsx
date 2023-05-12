@@ -27,28 +27,18 @@ import {
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const theme = useTheme();
   const dispatch = useDispatch();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const isOpen = Boolean(anchorEl);
-  const handleClick = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
 
   return (
-    <AppBar
-      sx={{
-        position: "static",
-        background: "none",
-        boxShadow: "none",
-      }}
-    >
+    // <AppBar
+    //   sx={{
+    //     position: "static",
+    //     background: "none",
+    //     boxShadow: "none",
+    //   }}
+    // >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left Side of Navbar */}
         <FlexBetween >
-          <IconButton
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            sx={{ mr: 2, marginLeft: -2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <FlexBetween
             backgroundColor={theme.palette.primary[400]}
             borderRadius="5px"
@@ -76,7 +66,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           </IconButton>
         </FlexBetween>
       </Toolbar>
-    </AppBar>
+    // </AppBar>
   );
 };
 
