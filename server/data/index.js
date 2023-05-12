@@ -17308,15 +17308,15 @@ export const dataAffiliateStat = [
   
   export const dataUser = [
     {
-      _id: "63701cc1f03239c72c00017f",
-      name: "Konstantine",
-      email: "kranstead0@narod.ru",
-      password: "omMDCh",
-      city: "Nurabelen",
-      state: null,
-      country: "ID",
+      _id: "63701cc1f03239c72c000180",
+      name: "Steven Watkins",
+      email: "decima.techsolutions@gmail.com",
+      password: "PsY258456",
+      city: "Denver",
+      state: "CO",
+      country: "US",
       occupation: "Computer Systems Analyst I",
-      phoneNumber: "8346315874",
+      phoneNumber: "720-451-3767",
       transactions: [
         "63701d74f0323986f3000158",
         "63701d74f03239d40b00007e",
@@ -17325,8 +17325,9 @@ export const dataAffiliateStat = [
       ],
       role: "superadmin",
     },
+    
     {
-      _id: "63701cc1f03239c72c000180",
+      _id: "63701cc1f03239c82c000180",
       name: "Marilyn",
       email: "mdonlon1@hostgator.com",
       password: "XRYBnKAfm",
