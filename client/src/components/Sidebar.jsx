@@ -18,8 +18,30 @@ import MailIcon from "@mui/icons-material/Mail";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
+import {
+  PointOfSaleOutlined,
+  TodayOutlined,
+  CalendarMonthOutlined,
+  PieChartOutlined,
+} from "@mui/icons-material";
+import DashboardSharpIcon from '@mui/icons-material/DashboardSharp';
+import RecentActorsSharpIcon from '@mui/icons-material/RecentActorsSharp';
+import EngineeringSharpIcon from '@mui/icons-material/EngineeringSharp';
+import LocalShippingSharpIcon from '@mui/icons-material/LocalShippingSharp';
+import PeopleSharpIcon from '@mui/icons-material/PeopleSharp';
+import MenuBookSharpIcon from '@mui/icons-material/MenuBookSharp';
+import RequestQuoteSharpIcon from '@mui/icons-material/RequestQuoteSharp';
+import AssuredWorkloadSharpIcon from '@mui/icons-material/AssuredWorkloadSharp';
+import ConstructionSharpIcon from '@mui/icons-material/ConstructionSharp';
+import MuseumSharpIcon from '@mui/icons-material/MuseumSharp';
+import InventorySharpIcon from '@mui/icons-material/InventorySharp';
+import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
+import ReceiptLongSharpIcon from '@mui/icons-material/ReceiptLongSharp';
+import AssessmentSharpIcon from '@mui/icons-material/AssessmentSharp';
+import PaymentsSharpIcon from '@mui/icons-material/PaymentsSharp';
 
 const drawerWidth = 240;
+
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -30,7 +52,7 @@ const openedMixin = (theme) => ({
   overflowX: "hidden",
 });
 
-const closedMixin = (theme) => ({
+const closedMixin = (theme, width) => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -38,11 +60,12 @@ const closedMixin = (theme) => ({
   overflowX: "hidden",
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+    width: `calc(${theme.spacing(6)} )`,
+  },
+  [theme.breakpoints.up("md")]: {
+    width: `calc(${width} - 1px)`,
   },
 });
-
-
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -61,33 +84,41 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
+const NavItems0 = [
+  { text: "Dashboard", icon: <DashboardSharpIcon />, path: "/dashboard" },
+];
 const NavItems1 = [
-  { text: "Inbox", icon: <InboxIcon />, path: "/dashboard" },
-  { text: "Starred", icon: <MailIcon />, path: "/inbox" },
-  { text: "Send email", icon: <InboxIcon />, path: "/mail" },
-  { text: "Drafts", icon: <MailIcon />, path: "/drafts" },
+  { text: "Personnel", icon: null },
+  { text: "Contacts", icon: <RecentActorsSharpIcon />, path: "/dashboard" },
+  { text: "Team", icon: <EngineeringSharpIcon />, path: "/drafts" },
+  { text: "Clients", icon: <PeopleSharpIcon />, path: "/inbox" },
+  { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
 ];
 const NavItems2 = [
-  { text: "All mail", icon: <InboxIcon />, path: "/all" },
-  { text: "Trash", icon: <MailIcon />, path: "/trash" },
-  { text: "Spam", icon: <InboxIcon />, path: "/spam" },
+  { text: "Estimating Department", icon: null },
+  { text: "Materials Catalouge", icon: <MenuBookSharpIcon />, path: "/all" },
+  { text: "Estimating", icon: <RequestQuoteSharpIcon />, path: "/trash" },
+  { text: "Outcome", icon: <AssuredWorkloadSharpIcon />, path: "/spam" },
 ];
 const NavItems3 = [
-  { text: "Inbox", icon: <InboxIcon />, path: "/dashboard" },
-  { text: "Starred", icon: <MailIcon />, path: "/inbox" },
-  { text: "Send email", icon: <InboxIcon />, path: "/mail" },
-  { text: "Drafts", icon: <MailIcon />, path: "/drafts" },
+  { text: "Project Manager", icon: null },
+  { text: "Projects", icon: <ConstructionSharpIcon />, path: "/dashboard" },
+  { text: "Showroom", icon: <MuseumSharpIcon />, path: "/inbox" },
+  { text: "Reg Comp", icon: <InventorySharpIcon />, path: "/mail" },
+  { text: "Calendar", icon: <CalendarMonthSharpIcon />, path: "/drafts" },
 ];
 const NavItems4 = [
-  { text: "All mail", icon: <InboxIcon />, path: "/all" },
-  { text: "Trash", icon: <MailIcon />, path: "/trash" },
-  { text: "Spam", icon: <InboxIcon />, path: "/spam" },
+  { text: "Financial", icon: null },
+  { text: "Invoices", icon: <ReceiptLongSharpIcon />, path: "/all" },
+  { text: "Reports", icon: <AssessmentSharpIcon />, path: "/trash" },
+  { text: "Payroll", icon: <PaymentsSharpIcon />, path: "/spam" },
 ];
 const NavItems5 = [
-  { text: "Inbox", icon: <InboxIcon />, path: "/dashboard" },
-  { text: "Starred", icon: <MailIcon />, path: "/inbox" },
-  { text: "Send email", icon: <InboxIcon />, path: "/mail" },
-  { text: "Drafts", icon: <MailIcon />, path: "/drafts" },
+  { text: "Sales", icon: null },
+  { text: "Overview", icon: <PointOfSaleOutlined /> },
+  { text: "Daily", icon: <TodayOutlined /> },
+  { text: "Monthly", icon: <CalendarMonthOutlined /> },
+  { text: "Breakdown", icon: <PieChartOutlined /> },
 ];
 const NavItems6 = [
   { text: "All mail", icon: <InboxIcon />, path: "/all" },
@@ -98,7 +129,7 @@ const NavItems6 = [
 const Sidebar = ({ isNonMobile }) => {
   function MiniDrawer() {
     const theme = useTheme();
-    const { pathname } = useLocation();
+    // const { pathname } = useLocation();
     const [open, setOpen] = useState(true);
     const [active, setActive] = useState("");
     const navigate = useNavigate();
@@ -107,10 +138,10 @@ const Sidebar = ({ isNonMobile }) => {
       setOpen(!open);
     };
 
-    const handleNavigation = (item) => {
-      setActive(item.text);
-      navigate(item.path);
-    };
+    // const handleNavigation = (item) => {
+    //   setActive(item.text);
+    //   navigate(item.path);
+    // };
 
     return (
       <Box component="nav" sx={{ display: "flex" }}>
@@ -128,7 +159,6 @@ const Sidebar = ({ isNonMobile }) => {
             },
           }}
         >
-
           <Box width="100%">
             <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
               <IconButton
@@ -140,280 +170,308 @@ const Sidebar = ({ isNonMobile }) => {
                 <MenuIcon />
               </IconButton>
               {open && (
-
-              <FlexBetween color={theme.palette.primary[500]}>
-                <Box display="flex" alignItems="right" gap="0.5rem">
-                  <Typography variant="h2" fontWeight="bold">
-                    Indigo
-                  </Typography>
-                </Box>
-              </FlexBetween>
-                )}
+                <FlexBetween color={theme.palette.primary[500]}>
+                  <Box display="flex" alignItems="right" gap="0.5rem">
+                    <Typography variant="h2" fontWeight="bold">
+                      Indigo
+                    </Typography>
+                  </Box>
+                </FlexBetween>
+              )}
             </Toolbar>
           </Box>
 
-          <Divider />
+          <List sx={{ paddingLeft: 0 }}>
+            {NavItems0.map(({ text, icon }) => {
+              if (!icon) {
+                return (
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
 
+              return (
+                <ListItem key={text} disablePadding sx={{ my: -1 }}>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.grey[400]
+                          : theme.palette.primary[100],
+                    }}
+                  >
+                    <ListItemIcon
+                      sx={{
+                        color:
+                          active === lcText
+                            ? theme.palette.primary[100]
+                            : theme.palette.primary[100],
+                      }}
+                    >
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
 
+          <Divider sx={{ mb: -3 }} />
 
           <List sx={{ paddingLeft: 0 }}>
             {NavItems1.map(({ text, icon }) => {
-                if (!icon) {
-                  return (
-                    <Typography key={text} 
-                    sx={{ m: "2.25rem 0 1rem 3rem" }}
-                    >
-                      {text}
-                    </Typography>
-                  )
-                }
-                const lcText = text.toLowerCase();
-
+              if (!icon) {
                 return (
-                  <ListItem key={text} disablePadding >
-                    <ListItemButton
-                      onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
-                      }}
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
+
+              return (
+                <ListItem key={text} disablePadding sx={{ my: -1 }}>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.grey[400]
+                          : theme.palette.primary[100],
+                    }}
+                  >
+                    <ListItemIcon
                       sx={{
-                        backgroundColor:
-                          active === lcText
-                            ? theme.palette.primary[300]
-                            : "transparent",
                         color:
                           active === lcText
-                            ? theme.palette.grey[400]
+                            ? theme.palette.primary[100]
                             : theme.palette.primary[100],
                       }}
                     >
-                       <ListItemIcon
-                        sx={{
-                          // ml: "2rem",
-                          color:
-                            active === lcText
-                              ? theme.palette.primary[100]
-                              : theme.palette.primary[100],
-                        }}
-                      >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                );
-              })}
-            </List>
-            
-            <Divider />
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
+
+          <Divider sx={{ mb: -3 }} />
 
           <List sx={{ paddingLeft: 0 }}>
             {NavItems2.map(({ text, icon }) => {
-                if (!icon) {
-                  return (
-                    <Typography key={text} 
-                    sx={{ m: "2.25rem 0 1rem 3rem" }}
-                    >
-                      {text}
-                    </Typography>
-                  )
-                }
-                const lcText = text.toLowerCase();
-
+              if (!icon) {
                 return (
-                  <ListItem key={text} disablePadding >
-                    <ListItemButton
-                      onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
-                      }}
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
+
+              return (
+                <ListItem key={text} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.grey[400]
+                          : theme.palette.primary[100],
+                    }}
+                  >
+                    <ListItemIcon
                       sx={{
-                        backgroundColor:
-                          active === lcText
-                            ? theme.palette.primary[300]
-                            : "transparent",
+                        // ml: "2rem",
                         color:
                           active === lcText
-                            ? theme.palette.grey[400]
+                            ? theme.palette.primary[100]
                             : theme.palette.primary[100],
                       }}
                     >
-                       <ListItemIcon
-                        sx={{
-                          // ml: "2rem",
-                          color:
-                            active === lcText
-                              ? theme.palette.primary[100]
-                              : theme.palette.primary[100],
-                        }}
-                      >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                );
-              })}
-            </List>
-            
-            <Divider />
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
 
-            
+          <Divider sx={{ mb: -3 }} />
+
           <List sx={{ paddingLeft: 0 }}>
             {NavItems3.map(({ text, icon }) => {
-                if (!icon) {
-                  return (
-                    <Typography key={text} 
-                    sx={{ m: "2.25rem 0 1rem 3rem" }}
-                    >
-                      {text}
-                    </Typography>
-                  )
-                }
-                const lcText = text.toLowerCase();
-
+              if (!icon) {
                 return (
-                  <ListItem key={text} disablePadding >
-                    <ListItemButton
-                      onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
-                      }}
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
+
+              return (
+                <ListItem key={text} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.grey[400]
+                          : theme.palette.primary[100],
+                    }}
+                  >
+                    <ListItemIcon
                       sx={{
-                        backgroundColor:
-                          active === lcText
-                            ? theme.palette.primary[300]
-                            : "transparent",
+                        // ml: "2rem",
                         color:
                           active === lcText
-                            ? theme.palette.grey[400]
+                            ? theme.palette.primary[100]
                             : theme.palette.primary[100],
                       }}
                     >
-                       <ListItemIcon
-                        sx={{
-                          // ml: "2rem",
-                          color:
-                            active === lcText
-                              ? theme.palette.primary[100]
-                              : theme.palette.primary[100],
-                        }}
-                      >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                );
-              })}
-            </List>
-            
-            <Divider />
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
 
-            
+          <Divider sx={{ mb: -3 }} />
+
           <List sx={{ paddingLeft: 0 }}>
             {NavItems4.map(({ text, icon }) => {
-                if (!icon) {
-                  return (
-                    <Typography key={text} 
-                    sx={{ m: "2.25rem 0 1rem 3rem" }}
-                    >
-                      {text}
-                    </Typography>
-                  )
-                }
-                const lcText = text.toLowerCase();
-
+              if (!icon) {
                 return (
-                  <ListItem key={text} disablePadding >
-                    <ListItemButton
-                      onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
-                      }}
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
+
+              return (
+                <ListItem key={text} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.grey[400]
+                          : theme.palette.primary[100],
+                    }}
+                  >
+                    <ListItemIcon
                       sx={{
-                        backgroundColor:
-                          active === lcText
-                            ? theme.palette.primary[300]
-                            : "transparent",
+                        // ml: "2rem",
                         color:
                           active === lcText
-                            ? theme.palette.grey[400]
+                            ? theme.palette.primary[100]
                             : theme.palette.primary[100],
                       }}
                     >
-                       <ListItemIcon
-                        sx={{
-                          // ml: "2rem",
-                          color:
-                            active === lcText
-                              ? theme.palette.primary[100]
-                              : theme.palette.primary[100],
-                        }}
-                      >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                );
-              })}
-            </List>
-            
-            <Divider />
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
 
-            
+          <Divider sx={{ mb: -3 }} />
+
           <List sx={{ paddingLeft: 0 }}>
             {NavItems5.map(({ text, icon }) => {
-                if (!icon) {
-                  return (
-                    <Typography key={text} 
-                    sx={{ m: "2.25rem 0 1rem 3rem" }}
-                    >
-                      {text}
-                    </Typography>
-                  )
-                }
-                const lcText = text.toLowerCase();
-
+              if (!icon) {
                 return (
-                  <ListItem key={text} disablePadding >
-                    <ListItemButton
-                      onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
-                      }}
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    {text}
+                  </Typography>
+                );
+              }
+              const lcText = text.toLowerCase();
+
+              return (
+                <ListItem key={text} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      navigate(`/${lcText}`);
+                      setActive(lcText);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.primary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.grey[400]
+                          : theme.palette.primary[100],
+                    }}
+                  >
+                    <ListItemIcon
                       sx={{
-                        backgroundColor:
-                          active === lcText
-                            ? theme.palette.primary[300]
-                            : "transparent",
+                        // ml: "2rem",
                         color:
                           active === lcText
-                            ? theme.palette.grey[400]
+                            ? theme.palette.primary[100]
                             : theme.palette.primary[100],
                       }}
                     >
-                       <ListItemIcon
-                        sx={{
-                          // ml: "2rem",
-                          color:
-                            active === lcText
-                              ? theme.palette.primary[100]
-                              : theme.palette.primary[100],
-                        }}
-                      >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                );
-              })}
-            </List>
-            
-            <Divider />
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
 
+          <Divider sx={{ mb: -3 }} />
         </Drawer>
       </Box>
     );
