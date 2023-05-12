@@ -68,3 +68,12 @@ Project-Indigo
 ## Client
 
     npm i react-redux @reduxjs/toolkit react-datepicker react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
+
+<h3>
+<ul><b>ToDo List</b></ul>
+</h3>
+
+## Theme
+
+    check that all theme settings are compatible with new methods implemented in sidebar
+        => Noticed useState has mode 'dark' in ../state/index.js
