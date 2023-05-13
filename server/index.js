@@ -15,19 +15,19 @@ import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
 // database injection data
-import User from './models/user.js';
-import { dataUser } from './data/index.js';
+// import User from './models/user.js';
+// import { dataUser } from './data/index.js';
 
 // CONFIGURATION
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 // ROUTES
 app.get('/client', clientRoutes);
@@ -49,8 +49,8 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     // Only run this once to inject data into the database
-    User.insertMany(dataUser);
-    console.log('Data Inserted');
+    // User.insertMany(dataUser);
+    // console.log('Data Inserted');
     
 
     })    
