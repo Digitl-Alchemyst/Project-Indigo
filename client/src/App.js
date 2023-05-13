@@ -8,7 +8,6 @@ import Dashboard from './scenes/dashboard';
 import Layout from './scenes/layout';
 // import Products from "scenes/products";
 // import Customers from "scenes/customers";
-
 // import Transactions from "scenes/transactions";
 // import Geography from "scenes/geography";
 // import Overview from "scenes/overview";
@@ -18,7 +17,7 @@ import Layout from './scenes/layout';
 // import Admin from "scenes/admin";
 // import Performance from "scenes/performance";
 import Form from "scenes/form";
-import Clients from "scenes/Clients";
+// import Clients from "scenes/Clients";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
