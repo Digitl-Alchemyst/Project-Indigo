@@ -1,7 +1,7 @@
 Project-Indigo
 
 <h1>
-<ul><b>Project Dashy</b></ul>
+<ul><b>Project Indigo</b></ul>
 </h1>
 
 <h2>
@@ -63,11 +63,11 @@ Project-Indigo
 
 ## Server
 
-    npm i express body-parser cors dotenv helmet morgan mongoose nodemon mongodb
+    npm i express body-parser@1.20.1 cors dotenv helmet@6.0.0 morgan mongoose@6.7.3 nodemon@2.0.20 mongodb
 
 ## Client
 
-    npm i react-redux @reduxjs/toolkit react-datepicker react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
+    npm i react-redux @reduxjs/toolkit@1.9.0 react-datepicker@4.83.0 react-router-dom@6.4. @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
 
 <h3>
 <ul><b>ToDo List</b></ul>
