@@ -3,6 +3,9 @@ Project-Indigo
 <h1>
 <ul><b>Project Indigo</b></ul>
 </h1>
+<h4>
+<ul><b>V-0.1.2.2</b></ul>
+</h4>
 
 <h2>
 <ul><b>Development Enviroment</b></ul>
