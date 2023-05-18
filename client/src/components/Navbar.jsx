@@ -64,6 +64,9 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           <IconButton>
             <SettingsOutlined sx={{ fontSize: "25px" }} />
           </IconButton>
+
+             {/* Add in profile info */}
+
         </FlexBetween>
       </Toolbar>
     // </AppBar>
