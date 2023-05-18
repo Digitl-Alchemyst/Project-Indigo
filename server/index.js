@@ -12,7 +12,7 @@ import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
 // imports for database data
-import User from './models/user.js';
+import User from './models/User.js';
 import { dataUser } from './data/index.js';
 
 // CONFIGURATION
