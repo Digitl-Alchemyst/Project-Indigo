@@ -18,30 +18,30 @@ import MailIcon from "@mui/icons-material/Mail";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
+import profileImage from "assets/profile.jpg";
 import {
   PointOfSaleOutlined,
   TodayOutlined,
   CalendarMonthOutlined,
-  PieChartOutlined,
+  PieChartOutlined, SettingsOutlined,
 } from "@mui/icons-material";
-import DashboardSharpIcon from '@mui/icons-material/DashboardSharp';
-import RecentActorsSharpIcon from '@mui/icons-material/RecentActorsSharp';
-import EngineeringSharpIcon from '@mui/icons-material/EngineeringSharp';
-import LocalShippingSharpIcon from '@mui/icons-material/LocalShippingSharp';
-import PeopleSharpIcon from '@mui/icons-material/PeopleSharp';
-import MenuBookSharpIcon from '@mui/icons-material/MenuBookSharp';
-import RequestQuoteSharpIcon from '@mui/icons-material/RequestQuoteSharp';
-import AssuredWorkloadSharpIcon from '@mui/icons-material/AssuredWorkloadSharp';
-import ConstructionSharpIcon from '@mui/icons-material/ConstructionSharp';
-import MuseumSharpIcon from '@mui/icons-material/MuseumSharp';
-import InventorySharpIcon from '@mui/icons-material/InventorySharp';
-import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
-import ReceiptLongSharpIcon from '@mui/icons-material/ReceiptLongSharp';
-import AssessmentSharpIcon from '@mui/icons-material/AssessmentSharp';
-import PaymentsSharpIcon from '@mui/icons-material/PaymentsSharp';
+import DashboardSharpIcon from "@mui/icons-material/DashboardSharp";
+import RecentActorsSharpIcon from "@mui/icons-material/RecentActorsSharp";
+import EngineeringSharpIcon from "@mui/icons-material/EngineeringSharp";
+import LocalShippingSharpIcon from "@mui/icons-material/LocalShippingSharp";
+import PeopleSharpIcon from "@mui/icons-material/PeopleSharp";
+import MenuBookSharpIcon from "@mui/icons-material/MenuBookSharp";
+import RequestQuoteSharpIcon from "@mui/icons-material/RequestQuoteSharp";
+import AssuredWorkloadSharpIcon from "@mui/icons-material/AssuredWorkloadSharp";
+import ConstructionSharpIcon from "@mui/icons-material/ConstructionSharp";
+import MuseumSharpIcon from "@mui/icons-material/MuseumSharp";
+import InventorySharpIcon from "@mui/icons-material/InventorySharp";
+import CalendarMonthSharpIcon from "@mui/icons-material/CalendarMonthSharp";
+import ReceiptLongSharpIcon from "@mui/icons-material/ReceiptLongSharp";
+import AssessmentSharpIcon from "@mui/icons-material/AssessmentSharp";
+import PaymentsSharpIcon from "@mui/icons-material/PaymentsSharp";
 
 const drawerWidth = 240;
-
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -126,7 +126,7 @@ const NavItems6 = [
   { text: "Spam", icon: <InboxIcon />, path: "/spam" },
 ];
 
-const Sidebar = ({ isNonMobile }) => {
+const Sidebar = ({ isNonMobile, user }) => {
   function MiniDrawer() {
     const theme = useTheme();
     // const { pathname } = useLocation();
@@ -471,11 +471,44 @@ const Sidebar = ({ isNonMobile }) => {
             })}
           </List>
 
-          <Divider sx={{ mb: -3 }} />
+            {/* Profile Image and Name */}
+          <Box position="absolute" left="-2.8rem" bottom="2rem">
+            <Divider sx={{ mb: -3.5 }} />
+            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0rem 3rem">
+                    <Box
+                      component="img"
+                      alt="profile"
+                      src={profileImage}
+                      height="40px"
+                      width="40px"
+                      borderRadius="50%"
+                      sx={{ objextFit: "cover" }}
+                    />
+                      <Box textAlign="left">
+                        <Typography 
+                        fontWeight="bold"
+                        fontSize="1rem"
+                        sx={{ color: theme.palette.secondary[100] }}
+                        >
+                          {user.name}
+                        </Typography>
+                        <Typography 
+                        fontSize="0.8rem"
+                        sx={{ color: theme.palette.secondary[200] }}
+                        >
+                          {user.occupation}
+                        </Typography>
+                      </Box>
+                      <SettingsOutlined
+                        sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+                      />
+              </FlexBetween>
+          </Box>
+
         </Drawer>
       </Box>
     );
-  }
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
