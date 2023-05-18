@@ -78,4 +78,6 @@ Project-Indigo
     check that all theme settings are compatible with new methods implemented in sidebar
         => Noticed useState has mode 'dark' in ../state/index.js
 
+    Div box issues in side bar need to debug
+
 ## Test
