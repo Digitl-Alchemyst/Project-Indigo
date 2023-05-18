@@ -1,7 +1,8 @@
 
 ## Install Dependancies
 
-    npm i react-redux @reduxjs/toolkit@1.9.0 react-datepicker@4.83.0 react-router-dom@6.4. @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
+    npm i express body-parser@1.20.1 cors dotenv helmet@6.0.0 morgan mongoose@6.7.3 nodemon@2.0.20 mongodb
+
 
 ### `npm install`
 
@@ -9,8 +10,8 @@ Installs all dependencies for the project.\
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+Runs the server in the development mode.\
+Server runs on Port 5001 & will show listening port in terminal upon successful database connection.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
