@@ -2,6 +2,10 @@
 
     npm i react-redux @reduxjs/toolkit@1.9.0 react-datepicker@4.83.0 react-router-dom@6.4. @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
 
+## Database Schema Graph
+
+    [Schema Graph](https://lucid.app/lucidchart/8c175711-c3e9-4f7b-8449-533597d8ad93/edit?view_items=T197i~QwL6qM&invitationId=inv_d70c0c38-a7c0-417c-ab33-16af73d24cfe)
+
 ### `npm install`
 
 Installs all dependencies for the project.\
