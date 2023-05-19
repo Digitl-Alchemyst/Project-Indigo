@@ -26,7 +26,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### Todos
 
-    Set up frontend API query
 
 
 
