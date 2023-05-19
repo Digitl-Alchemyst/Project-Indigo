@@ -28,7 +28,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### Todos
 
-    Set up backend Schema, Routes & Controllers, prepare Dev branch to recieve.
+    X Set up backend Schema, Routes & Controllers, prepare Dev branch to recieve.
 
 
 
