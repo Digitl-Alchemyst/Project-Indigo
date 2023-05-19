@@ -12,8 +12,9 @@ export const api = createApi({
       getProducts: build.query({
         query: () => `client/products`,
         providesTags: ["Products"],
-      })
-    }),
+    })
+}),
+
 });
 
 export const {
