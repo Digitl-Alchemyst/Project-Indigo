@@ -89,7 +89,7 @@ Project-Indigo
 ###To-Do List
 
     X   Create Products Schema, Routes, Controllers, API & Query
-            Create Front-end Page for Products
-        Create Contacts Schema, Routes, Controllers, API & Query
-            Create Front-end Page for Contacts, Team, Clients, Vendors & Red-tape
+    X      Create Front-end Page for Products
+        Complete Customers Chapter
+
 
