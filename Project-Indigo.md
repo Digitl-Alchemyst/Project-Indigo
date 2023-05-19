@@ -91,3 +91,4 @@ Project-Indigo
             Create Front-end Page for Material Catalouge
         Create Contacts, Team, Clients, Vendors, & Red-tape: Schema, Routes, Controllers, API & Query
             Create Front-end Page for Contacts, Team, Clients, Vendors & Red-tape
+
