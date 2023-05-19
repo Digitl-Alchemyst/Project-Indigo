@@ -13,6 +13,8 @@ export const api = createApi({
         query: () => `client/products`,
         providesTags: ["Products"],
     })
+}),
+
 });
 
 export const {

@@ -1,4 +1,4 @@
-import Product from '../models/product.js';
+import Product from '../models/Product.js';
 import ProductStat from '../models/ProductStat.js';
 
 export const getProducts = async (req, res) => { // req = fetch paramaters and body res = send data to front end or api call
