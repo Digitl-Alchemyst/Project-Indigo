@@ -87,4 +87,4 @@ Project-Indigo
 
 ###To-Do
 
-    Create front-end Products page.
+    X   Create front-end Products page.
