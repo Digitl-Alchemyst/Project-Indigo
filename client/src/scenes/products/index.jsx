@@ -8,11 +8,16 @@ import {
   Button,
   Typography,
   Rating,
-  IconButton,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 
-function Products() {
-  return <div>Products</div>;
-}
+const Products = () => {
+  return (
+    <div>
+      Products
+    </div>
+  );
+};
 
 export default Products;
