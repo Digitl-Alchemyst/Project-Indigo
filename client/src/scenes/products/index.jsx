@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState } from "react";
 import {
   Box,
   Card,
@@ -11,6 +11,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+import { useGetProductsQuery } from "../../services/products";
 
 const Products = () => {
   return (
