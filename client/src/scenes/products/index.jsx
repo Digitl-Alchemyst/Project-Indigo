@@ -11,7 +11,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { useGetProductsQuery } from "../../services/products";
+import { useGetProductsQuery } from "state/api";
 
 const Products = () => {
   return (
