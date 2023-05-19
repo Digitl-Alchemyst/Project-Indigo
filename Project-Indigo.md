@@ -85,6 +85,11 @@ Project-Indigo
 
 ## Test
 
-###To-Do
 
-    X   Create front-end Products page.
+###To-Do List
+
+    X   Create Products Schema, Routes, Controllers, API & Query
+            Create Front-end Page for Products
+        Create Contacts Schema, Routes, Controllers, API & Query
+            Create Front-end Page for Contacts, Team, Clients, Vendors & Red-tape
+
