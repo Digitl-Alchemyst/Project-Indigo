@@ -28,3 +28,7 @@ Launches the test runner in the interactive watch mode.\
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### Todos
+
+    X Set up backend Schema, Routes & Controllers, prepare Dev branch to recieve.
