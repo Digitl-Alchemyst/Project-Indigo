@@ -23,7 +23,8 @@ import {
   PointOfSaleOutlined,
   TodayOutlined,
   CalendarMonthOutlined,
-  PieChartOutlined, SettingsOutlined,
+  PieChartOutlined,
+  SettingsOutlined,
 } from "@mui/icons-material";
 import DashboardSharpIcon from "@mui/icons-material/DashboardSharp";
 import RecentActorsSharpIcon from "@mui/icons-material/RecentActorsSharp";
@@ -87,9 +88,16 @@ const Drawer = styled(MuiDrawer, {
 const NavItems0 = [
   { text: "Dashboard", icon: <DashboardSharpIcon />, path: "/dashboard" },
 ];
+// const NavItems1 = [
+//   { text: "Personnel", icon: null },
+//   { text: "Contacts", icon: <RecentActorsSharpIcon />, path: "/dashboard" },
+//   { text: "Team", icon: <EngineeringSharpIcon />, path: "/drafts" },
+//   { text: "Clients", icon: <PeopleSharpIcon />, path: "/inbox" },
+//   { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
+// ];
 const NavItems1 = [
-  { text: "Personnel", icon: null },
-  { text: "Contacts", icon: <RecentActorsSharpIcon />, path: "/dashboard" },
+  { text: "Tutorial", icon: null },
+  { text: "Products", icon: <RecentActorsSharpIcon />, path: "/products" },
   { text: "Team", icon: <EngineeringSharpIcon />, path: "/drafts" },
   { text: "Clients", icon: <PeopleSharpIcon />, path: "/inbox" },
   { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
@@ -471,44 +479,47 @@ const Sidebar = ({ isNonMobile, user }) => {
             })}
           </List>
 
-            {/* Profile Image and Name */}
+          {/* Profile Image and Name */}
           <Box position="absolute" left="-2.8rem" bottom="2rem">
             <Divider sx={{ mb: -3.5 }} />
-            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0rem 3rem">
-                    <Box
-                      component="img"
-                      alt="profile"
-                      src={profileImage}
-                      height="40px"
-                      width="40px"
-                      borderRadius="50%"
-                      sx={{ objextFit: "cover" }}
-                    />
-                      <Box textAlign="left">
-                        <Typography 
-                        fontWeight="bold"
-                        fontSize="1rem"
-                        sx={{ color: theme.palette.secondary[100] }}
-                        >
-                          {user.name}
-                        </Typography>
-                        <Typography 
-                        fontSize="0.8rem"
-                        sx={{ color: theme.palette.secondary[200] }}
-                        >
-                          {user.occupation}
-                        </Typography>
-                      </Box>
-                      <SettingsOutlined
-                        sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
-                      />
-              </FlexBetween>
+            <FlexBetween
+              textTransform="none"
+              gap="1rem"
+              m="1.5rem 2rem 0rem 3rem"
+            >
+              <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="40px"
+                width="40px"
+                borderRadius="50%"
+                sx={{ objextFit: "cover" }}
+              />
+              <Box textAlign="left">
+                <Typography
+                  fontWeight="bold"
+                  fontSize="1rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize="0.8rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {user.occupation}
+                </Typography>
+              </Box>
+              <SettingsOutlined
+                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+              />
+            </FlexBetween>
           </Box>
-
         </Drawer>
       </Box>
     );
-  };
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
