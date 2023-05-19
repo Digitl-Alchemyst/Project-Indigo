@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Card,
@@ -11,14 +11,10 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { useGetProductsQuery } from "../../services/products";
+import { useGetProductsQuery } from "state/api";
 
 const Products = () => {
-  return (
-    <div>
-      Products
-    </div>
-  );
+  return <div>Products</div>;
 };
 
 export default Products;
