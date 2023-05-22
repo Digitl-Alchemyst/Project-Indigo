@@ -31,7 +31,7 @@ const Product = ({
     <Card
       sx={{
         display: "flex",
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.palette.primary[900],
         backgroundImage: `none`,
         boxShadow: theme.shadows[2],
         borderRadius: theme.shape.borderRadius,
@@ -40,8 +40,9 @@ const Product = ({
       {/* <CardContent sx={{ flex: "1 0 auto" }}> */}
       <CardContent>
         <Typography
-          sx={{ fontSize: 14 }}
-          color={theme.palette.secondary[700]}
+          sx={{ fontSize: 22 }}
+          fontWeight="bold"
+          color={theme.palette.secondary[400]}
           gutterBottom
         >
           {category}
@@ -61,7 +62,8 @@ const Product = ({
           size="small"
           onClick={() => setIsExpanded((prev) => !prev)}
           sx={{
-            color: theme.palette.primary.main,
+            color: theme.palette.primary[100],
+            backgroundColor: theme.palette.primary[400],
           }}
         >
           {isExpanded ? "Hide" : "Show"} Details
@@ -71,7 +73,7 @@ const Product = ({
         in={isExpanded}
         timeout="auto"
         unmountOnExit
-        sx={{ color: theme.palette.secondary[100] }}
+        sx={{ color: theme.palette.secondary[200] }}
       >
         <CardContent>
           <Typography>id: {_id}</Typography>

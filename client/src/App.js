@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './scenes/dashboard';
 import Layout from './scenes/layout';
 import Products from "scenes/products";
-// import Customers from "scenes/customers";
+import Customers from "./scenes/customers";
 // import Transactions from "scenes/transactions";
 // import Geography from "scenes/geography";
 // import Overview from "scenes/overview";
@@ -34,15 +34,15 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/form" element={<Form />} />
               {/* <Route path="/Clients" element={<Clients />} /> */}
-              {/* <Route path="/customers" element={<Customers />} />
-              <Route path="/transactions" element={<Transactions />} />
+              <Route path="/customers" element={<Customers />} />
+              {/* <Route path="/transactions" element={<Transactions />} />
               <Route path="/geography" element={<Geography />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
-              <Route path="/performance" element={<Performance />} /> */}
+              <Route path="/performance" element={<Performance />} />  */}
             </Route>
           </Routes>
         </ThemeProvider>
