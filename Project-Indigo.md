@@ -90,6 +90,9 @@ Project-Indigo
 
     X   Create Products Schema, Routes, Controllers, API & Query
     X      Create Front-end Page for Products
-        Complete Customers Chapter
+    X   Complete Customers Chapter
+    X   Complete Transactions Chapter
+       Complete Geography Chapter 
 
+Prepare for large merge
 
