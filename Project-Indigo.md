@@ -76,6 +76,13 @@ Project-Indigo
 <ul><b>ToDo List</b></ul>
 </h3>
 
+###To-Do List
+
+    X   Create Products Schema, Routes, Controllers, API & Query
+    X      Create Front-end Page for Products
+    X   Complete Customers Chapter
+    X   Complete Transactions Chapter
+       Complete Geography Chapter 
 ## Theme
 
     check that all theme settings are compatible with new methods implemented in sidebar
