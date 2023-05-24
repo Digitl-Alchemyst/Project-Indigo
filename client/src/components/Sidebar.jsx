@@ -100,7 +100,7 @@ const NavItems1 = [
   { text: "Products", icon: <RecentActorsSharpIcon />, path: "/products" },
   { text: "Customers", icon: <EngineeringSharpIcon />, path: "/customers" },
   { text: "Clients", icon: <PeopleSharpIcon />, path: "/inbox" },
-  { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
+  { text: "Geography", icon: <LocalShippingSharpIcon />, path: "/geography" },
 ];
 const NavItems2 = [
   { text: "Estimating Department", icon: null },
