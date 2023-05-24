@@ -83,13 +83,46 @@ Project-Indigo
 
     Div box issues in side bar need to debug
 
-## Test
+<h1>
+<ul><b>Project Stage Details</b></ul>
+</h1>
 
-
-###To-Do List
-
-    X   Create Products Schema, Routes, Controllers, API & Query
-    X      Create Front-end Page for Products
-        Complete Customers Chapter
+<br>
+<p>UI Element Updates<br>
+    <list>
+        <li>Update Color Palette</li>
+        <li>Style Scroll Bar for Sidebar</li>
+        <li>Update Topbar: Sizing & Box Colors</li>
+    </list>
+</p>
+<br>
+<h2>Dashboard</h2>
+<p>Element Styling<br>
+    <list>
+        <li>Campaign Widget: Title position</li>
+        <li>Sales Widget: Graph position</li>
+        <li>Geo Widget: Map Sizing</li>
+    </list>
+    <br>Widgets<br>
+    <list>
+        <li>Favorite Contacts List</li>
+        <li>2nd line of Nivo charts</li>
+        <li>Toggle between 1 or 2 rows of Nivo charts</li>
+    </list>
+</p>
+<p>Form<br>
+    <list>
+        <li>Encase form in a styled box</li>
+        <li>Make text input field labels larger</li>
+        <li>Remove dummy data.</li>
+    </list>
+</p>
+<p>Calandar<br>
+    <list>
+        <li>Upcoming Events styling needs major fix</li>
+        <li>Add more styling for a better look</li>
+        <li>Make event entry form if possible, check Full Calendar Docs</li>
+    </list>
+</p>
 
 
