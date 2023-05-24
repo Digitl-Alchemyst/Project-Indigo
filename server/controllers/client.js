@@ -1,6 +1,8 @@
+import { get } from 'mongoose';
 import Product from '../models/Product.js';
 import ProductStat from '../models/ProductStat.js';
 import User from "../models/User.js";
+import { getCountryIso3 } from 'country-iso-2-to-3';
 
 export const getProducts = async (req, res) => { // req = fetch paramaters and body res = send data to front end or api call
     try{
@@ -36,3 +38,33 @@ export const getProducts = async (req, res) => { // req = fetch paramaters and b
       res.status(404).json({ message: error.message });
     }
   };
+
+  export const getGeography = async (req, res) => {
+    try {
+      const users = await User.find({ role: "user" }).select("-password");
+
+      const mappedLocations = users.reduce(( acc, { country }) => {
+       const countryISO3 = getCountryIso3(country); 
+       if (!acc[countryISO3]) {
+          acc[countryISO3] = 0;
+          } 
+          acc[countryISO3]++;
+          return acc;
+
+      }, {});
+
+      const formattedLocations = Object.entries(mappedLocations).map(
+        ([country, count]) => {
+          return {
+            id: country,
+            value: count,
+          };
+      });      
+      
+      console.log(formattedLocations
+      res.status(200).json(formattedLocations);
+
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  }
