@@ -40,9 +40,9 @@ export const getProducts = async (req, res) => { // req = fetch paramaters and b
 
   export const getTransactions = async (req, res) => {
     try{
-      const { page =1, pageSize = 20, sort = null = "" } = req.query; 
+      const { page =1, pageSize = 20, sort = null, search = "" } = req.query; 
 
-      const generalSort = () => {
+      const generateSort = () => {
         const sortParsed = JSON.parse(sort);
         const sortFormatted = {
           [sortParsed.field]: sortParsed.order = "asc" ? 1 : -1,
@@ -54,8 +54,8 @@ export const getProducts = async (req, res) => { // req = fetch paramaters and b
 
       const transactions = await Transaction.find({
         $or: [
-          { cost: { $regex: new RegExp(search, "i") } }
-          { userID: { $regex: new RegExp(search, "i") } }
+          { cost: { $regex: new RegExp(search, "i") } },
+          { userID: { $regex: new RegExp(search, "i") } },
         ],
       })
         .sort(sortFormatted)
@@ -63,7 +63,7 @@ export const getProducts = async (req, res) => { // req = fetch paramaters and b
         .limit(pageSize);
 
       const total = await Transaction.countDocuments({
-        name: { $regex: search, options: "i" },
+        name: { $regex: search, $options: "i" },
       });
 
       res.status(200).json({ transactions, total });
