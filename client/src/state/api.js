@@ -30,7 +30,6 @@ export const api = createApi({
         providesTags: ["Customers"],
       }),
 
-
       getTransactions: build.query({
         query: ({ page, pageSize, sort, search }) => ({
           url: "client/transactions",
@@ -39,8 +38,6 @@ export const api = createApi({
         }),
         providesTags: ["Transactions"],
       }),
-}),
-
 
       getGeography: build.query({
         query: () => "client/geography",
