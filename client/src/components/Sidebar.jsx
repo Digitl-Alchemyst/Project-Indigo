@@ -99,7 +99,7 @@ const NavItems1 = [
   { text: "Tutorial", icon: null },
   { text: "Products", icon: <RecentActorsSharpIcon />, path: "/products" },
   { text: "Customers", icon: <EngineeringSharpIcon />, path: "/customers" },
-  { text: "Clients", icon: <PeopleSharpIcon />, path: "/inbox" },
+  { text: "Transactions", icon: <PeopleSharpIcon />, path: "/transactions" },
   { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
 ];
 const NavItems2 = [
