@@ -3,6 +3,9 @@
 
     npm i express body-parser@1.20.1 cors dotenv helmet@6.0.0 morgan mongoose@6.7.3 nodemon@2.0.20 mongodb
 
+## Database Schema Graph
+
+    [Schema Graph](https://lucid.app/lucidchart/8c175711-c3e9-4f7b-8449-533597d8ad93/edit?view_items=T197i~QwL6qM&invitationId=inv_d70c0c38-a7c0-417c-ab33-16af73d24cfe)
 
 ### `npm install`
 
@@ -28,7 +31,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### Todos
 
-    Set up backend Schema, Routes & Controllers, prepare Dev branch to recieve.
 
 
 
