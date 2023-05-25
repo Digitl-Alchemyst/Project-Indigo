@@ -99,7 +99,12 @@ Project-Indigo
     X      Create Front-end Page for Products
     X   Complete Customers Chapter
     X   Complete Transactions Chapter
-       Complete Geography Chapter 
+    X   Complete Geography Chapter 
+        Start Sales Section
+            Complete Overview
+            Complete Daily
+            Complete Monthly
+            Complete Breakdown
 
 <br>
 <p>UI Element Updates<br>
