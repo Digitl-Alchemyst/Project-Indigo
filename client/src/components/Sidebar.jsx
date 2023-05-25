@@ -96,44 +96,56 @@ const NavItems0 = [
 //   { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
 // ];
 const NavItems1 = [
-  { text: "Tutorial", icon: null },
+  { text: "Client & Product Data", icon: null },
   { text: "Products", icon: <RecentActorsSharpIcon />, path: "/products" },
   { text: "Customers", icon: <EngineeringSharpIcon />, path: "/customers" },
   { text: "Geography", icon: <LocalShippingSharpIcon />, path: "/geography" },
   { text: "Transactions", icon: <PeopleSharpIcon />, path: "/transactions" },
-  { text: "Vendors", icon: <LocalShippingSharpIcon />, path: "/mail" },
 ];
+// const NavItems2 = [
+//   { text: "Estimating Department", icon: null },
+//   { text: "Materials Catalouge", icon: <MenuBookSharpIcon />, path: "/all" },
+//   { text: "Estimating", icon: <RequestQuoteSharpIcon />, path: "/trash" },
+//   { text: "Outcome", icon: <AssuredWorkloadSharpIcon />, path: "/spam" },
+// ];
 const NavItems2 = [
-  { text: "Estimating Department", icon: null },
-  { text: "Materials Catalouge", icon: <MenuBookSharpIcon />, path: "/all" },
-  { text: "Estimating", icon: <RequestQuoteSharpIcon />, path: "/trash" },
-  { text: "Outcome", icon: <AssuredWorkloadSharpIcon />, path: "/spam" },
+  { text: "Sales Data", icon: null },
+  { text: "Overview", icon: <MenuBookSharpIcon />, path: "/overview" },
+  { text: "Daily", icon: <RequestQuoteSharpIcon />, path: "/daily" },
+  { text: "Monthly", icon: <AssuredWorkloadSharpIcon />, path: "/monthly" },
+  { text: "Breakdown", icon: <AssuredWorkloadSharpIcon />, path: "/breakdown" },
 ];
 const NavItems3 = [
-  { text: "Project Manager", icon: null },
-  { text: "Projects", icon: <ConstructionSharpIcon />, path: "/dashboard" },
-  { text: "Showroom", icon: <MuseumSharpIcon />, path: "/inbox" },
-  { text: "Reg Comp", icon: <InventorySharpIcon />, path: "/mail" },
-  { text: "Calendar", icon: <CalendarMonthSharpIcon />, path: "/drafts" },
+  { text: "Management", icon: null },
+  { text: "Admin", icon: <ConstructionSharpIcon />, path: "/admin" },
+  { text: "Performance", icon: <MuseumSharpIcon />, path: "/performance" },
 ];
-const NavItems4 = [
-  { text: "Financial", icon: null },
-  { text: "Invoices", icon: <ReceiptLongSharpIcon />, path: "/all" },
-  { text: "Reports", icon: <AssessmentSharpIcon />, path: "/trash" },
-  { text: "Payroll", icon: <PaymentsSharpIcon />, path: "/spam" },
-];
-const NavItems5 = [
-  { text: "Sales", icon: null },
-  { text: "Overview", icon: <PointOfSaleOutlined /> },
-  { text: "Daily", icon: <TodayOutlined /> },
-  { text: "Monthly", icon: <CalendarMonthOutlined /> },
-  { text: "Breakdown", icon: <PieChartOutlined /> },
-];
-const NavItems6 = [
-  { text: "All mail", icon: <InboxIcon />, path: "/all" },
-  { text: "Trash", icon: <MailIcon />, path: "/trash" },
-  { text: "Spam", icon: <InboxIcon />, path: "/spam" },
-];
+
+// const NavItems3 = [
+//   { text: "Project Manager", icon: null },
+//   { text: "Projects", icon: <ConstructionSharpIcon />, path: "/dashboard" },
+//   { text: "Showroom", icon: <MuseumSharpIcon />, path: "/inbox" },
+//   { text: "Reg Comp", icon: <InventorySharpIcon />, path: "/mail" },
+//   { text: "Calendar", icon: <CalendarMonthSharpIcon />, path: "/drafts" },
+// ];
+// const NavItems4 = [
+//   { text: "Financial", icon: null },
+//   { text: "Invoices", icon: <ReceiptLongSharpIcon />, path: "/all" },
+//   { text: "Reports", icon: <AssessmentSharpIcon />, path: "/trash" },
+//   { text: "Payroll", icon: <PaymentsSharpIcon />, path: "/spam" },
+// ];
+// const NavItems5 = [
+//   { text: "Sales", icon: null },
+//   { text: "Overview", icon: <PointOfSaleOutlined /> },
+//   { text: "Daily", icon: <TodayOutlined /> },
+//   { text: "Monthly", icon: <CalendarMonthOutlined /> },
+//   { text: "Breakdown", icon: <PieChartOutlined /> },
+// ];
+// const NavItems6 = [
+//   { text: "All mail", icon: <InboxIcon />, path: "/all" },
+//   { text: "Trash", icon: <MailIcon />, path: "/trash" },
+//   { text: "Spam", icon: <InboxIcon />, path: "/spam" },
+// ];
 
 const Sidebar = ({ isNonMobile, user }) => {
   function MiniDrawer() {
@@ -384,7 +396,7 @@ const Sidebar = ({ isNonMobile, user }) => {
 
           <Divider sx={{ mb: -3 }} />
 
-          <List sx={{ paddingLeft: 0 }}>
+          {/* <List sx={{ paddingLeft: 0 }}>
             {NavItems4.map(({ text, icon }) => {
               if (!icon) {
                 return (
@@ -476,9 +488,9 @@ const Sidebar = ({ isNonMobile, user }) => {
                     <ListItemText primary={text} />
                   </ListItemButton>
                 </ListItem>
-              );
-            })}
-          </List>
+              ); */}
+            {/* })}
+          </List> */}
 
           {/* Profile Image and Name */}
           <Box position="absolute" left="-2.8rem" bottom="2rem">
