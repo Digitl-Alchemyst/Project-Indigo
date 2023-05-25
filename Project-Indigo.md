@@ -90,6 +90,8 @@ Project-Indigo
 
     Div box issues in side bar need to debug
 
+2
+
 <h1>
 <ul><b>Project Stage Details</b></ul>
 </h1>
