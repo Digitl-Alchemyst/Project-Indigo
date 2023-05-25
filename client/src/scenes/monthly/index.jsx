@@ -151,7 +151,7 @@ const Monthly = () => {
                 itemDirection: "left-to-right",
                 itemWidth: 100,
                 itemHeight: 20,
-                itemOpacity: 0.85,
+                itemOpacity: 0.87,
                 symbolSize: 18,
                 symbolShape: "circle",
                 symbolBorderColor: "rgba(0, 0, 0, .5)",
