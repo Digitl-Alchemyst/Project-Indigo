@@ -26,10 +26,11 @@ const Overview = () => {
         <Select
           value={view}
           label="View"
+          defaultValue="sales"
           onChange={(e) => setView(e.target.value)}
         >
+          <MenuItem value="sales">Sales</MenuItem>
           <MenuItem value="units">Units</MenuItem>
-          <MenuItem value="revenue">Sales</MenuItem>
         </Select>
       </FormControl>
 
