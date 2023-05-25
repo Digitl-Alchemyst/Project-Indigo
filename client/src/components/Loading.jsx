@@ -19,6 +19,7 @@ const Loading = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    alignContent: "center",
                     height: "100vh",
                     width: "100vw",
                     backgroundColor: theme.palette.primary.main,
@@ -27,9 +28,13 @@ const Loading = () => {
                     borderRadius: "10px",
                   }}
                 >
-                  <img src={loading} alt="loading" />
+                  <h1>
                   <p>The DataBase is currently loading....</p>
+                  <img src={loading} alt="loading" />
+                  
+                  
                   <p>Please wait for the data to load.</p>
+                  </h1>
                 </Box>
         );
     };
