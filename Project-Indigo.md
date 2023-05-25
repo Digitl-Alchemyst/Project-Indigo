@@ -94,6 +94,13 @@ Project-Indigo
 <ul><b>Project Stage Details</b></ul>
 </h1>
 
+
+    X   Create Products Schema, Routes, Controllers, API & Query
+    X      Create Front-end Page for Products
+    X   Complete Customers Chapter
+    X   Complete Transactions Chapter
+       Complete Geography Chapter 
+
 <br>
 <p>UI Element Updates<br>
     <list>
@@ -132,4 +139,6 @@ Project-Indigo
     </list>
 </p>
 
+
+Prepare for large merge
 
