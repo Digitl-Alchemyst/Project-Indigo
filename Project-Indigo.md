@@ -90,7 +90,7 @@ Project-Indigo
 
     Div box issues in side bar need to debug
 
-2
+
 
 <h1>
 <ul><b>Project Stage Details</b></ul>
@@ -102,7 +102,7 @@ Project-Indigo
     X   Complete Customers Chapter
     X   Complete Transactions Chapter
     X   Complete Geography Chapter 
-        Start Sales Section
+    X   Start Sales Section
             Complete Overview
             Complete Daily
             Complete Monthly
