@@ -14,12 +14,12 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 
     const { monthlyData } = data;
     const totalSalesLine = {
-      id: "totalSales",
+      id: "Total Sales",
       color: theme.palette.secondary[200],
       data: [],
     };
     const totalUnitsLine = {
-      id: "totalUnits",
+      id: "Total Units",
       color: theme.palette.secondary[600],
       data: [],
     };
@@ -44,7 +44,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     );
 
     return [[totalSalesLine], [totalUnitsLine]];
-  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [data]); 
 
   if (!data || isLoading)
     return (
@@ -55,7 +55,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 
   return (
     <ResponsiveLine
-      data={view === "sales" ? totalSalesLine : totalUnitsLine}
+    data={view === "sales" ? totalSalesLine : totalUnitsLine}
       theme={{
         axis: {
           domain: {
