@@ -92,10 +92,6 @@ Project-Indigo
 
 
 
-
-
-
-
 <h1>
 <ul><b>Project Stage Details</b></ul>
 </h1>
