@@ -1,7 +1,7 @@
 
 ## Install Dependancies
 
-    npm i react-redux @reduxjs/toolkit@1.9.0 react-datepicker@4.83.0 react-router-dom@6.4. @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
+    npm i react-redux @reduxjs/toolkit@1.9.0 react-datepicker@4.83.0 react-router-dom@6.4. @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid@5.17.13 @nivo/core @nivo/bar @nivo/line @nivo/pie @nivo/geo
 
 ### `npm install`
 
