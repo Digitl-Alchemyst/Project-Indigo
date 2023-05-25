@@ -44,7 +44,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     );
 
     return [[totalSalesLine], [totalUnitsLine]];
-  }, [data]); 
+  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!data || isLoading)
     return (
