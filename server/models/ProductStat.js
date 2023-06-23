@@ -6,27 +6,16 @@ const ProductStatSchema = mongoose.Schema(
     {
         productId: {
             type: String,
-            required: true,
-            min: 2,
-            max: 100,
+            required: true
         },
         yearlySalesTotal: {
             type: Number,
-            required: true,
-            min: 2,
-            max: 100,
         },
         yearlyTotalSoldUnits: {
             type: Number,
-            required: true,
-            min: 2,
-            max: 100,
         },
         year: {
             type: Number,
-            required: true,
-            min: 2,
-            max: 100,
         },
         monthlyData: [
             {

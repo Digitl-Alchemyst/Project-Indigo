@@ -8,7 +8,7 @@ import Loading from "components/Loading";
 const Customers = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetCustomersQuery();
-  console.log("data", data);
+  // console.log("data", data);
 
   const columns = [
     { field: "_id", headerName: "ID", flex: 0.7 },

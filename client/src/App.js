@@ -15,7 +15,7 @@ import Daily from "scenes/daily";
 import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
-// import Performance from "scenes/performance";
+import Performance from "scenes/performance";
 import Form from "scenes/form";
 // import Clients from "scenes/Clients";
 
@@ -42,7 +42,7 @@ function App() {
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
-              {/* <Route path="/performance" element={<Performance />} />   */}
+              <Route path="/performance" element={<Performance />} />  
 
             </Route>
           </Routes>

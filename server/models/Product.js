@@ -5,39 +5,21 @@ const ProductSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: true,
-            min: 2,
-            max: 100,
         },
         price: {
             type: Number,
-            required: true,
-            min: 2,
-            max: 100,
         },
         description: {
             type: String,
-            required: true,
-            min: 2,
-            max: 100,
         },
         category: {
             type: String,
-            required: true,
-            min: 2,
-            max: 100,
         },
         rating: {
             type: Number,
-            required: true,
-            min: 2,
-            max: 100,
         },
         supply: {
             type: Number,
-            required: true,
-            min: 2,
-            max: 100,
         },
     },
     { timestamps: true }

@@ -23,7 +23,7 @@ const Transactions = () => {
     sort: JSON.stringify(sort),
     search,
   });
-  console.log("data:", data);
+  // console.log("data:", data);
 
   const columns = [
     { field: "_id", headerName: "ID", flex: 0.7 },

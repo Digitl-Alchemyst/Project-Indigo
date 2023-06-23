@@ -64,7 +64,7 @@ export const getProducts = async (req, res) => { // req = fetch paramaters and b
           };
       });      
       
-      console.log(formattedLocations)
+      // console.log(formattedLocations)
       res.status(200).json(formattedLocations);
 
     } catch (error) {
