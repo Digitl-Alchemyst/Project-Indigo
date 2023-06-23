@@ -17,7 +17,7 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 import Form from "scenes/form";
-// import Clients from "scenes/Clients";
+
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -33,7 +33,6 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
               <Route path="/form" element={<Form />} />
-              {/* <Route path="/Clients" element={<Clients />} /> */}
               <Route path="/customers" element={<Customers />} />
               <Route path="/geography" element={<Geography />} />
               <Route path="/transactions" element={<Transactions />} />
