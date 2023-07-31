@@ -17311,7 +17311,7 @@ export const dataAffiliateStat = [
       _id: "63701cc1f03239c72c000180",
       name: "Steven Watkins",
       email: "decima.techsolutions@gmail.com",
-      password: "PsY258456",
+      password: "AcaB1312#",
       city: "Denver",
       state: "CO",
       country: "US",
